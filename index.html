@@ -1,0 +1,577 @@
+<!doctype html>
+
+<html class="dark" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Craft Food | Street Food Premium</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#ffd900',
+              'background-light': '#f8f8f5',
+              'background-dark': '#23200f',
+            },
+            fontFamily: {
+              display: ['Space Grotesk', 'sans-serif'],
+            },
+            borderRadius: {
+              DEFAULT: '0.5rem',
+              lg: '1rem',
+              xl: '1.5rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .brush-stroke {
+        position: relative;
+        z-index: 1;
+      }
+      .brush-stroke::after {
+        content: '';
+        position: absolute;
+        left: -5%;
+        bottom: 0;
+        width: 110%;
+        height: 40%;
+        background-color: #ffd900;
+        z-index: -1;
+        transform: skewX(-15deg);
+        opacity: 0.8;
+        border-radius: 2px;
+      }
+      .dotted-bg {
+        background-image: radial-gradient(circle, #4b4520 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 overflow-x-hidden"
+  >
+    <!-- Header / Nav -->
+    <header
+      class="fixed top-0 w-full z-50 bg-background-dark/80 backdrop-blur-md border-b border-primary/10"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-1">
+          <span class="text-xl font-bold tracking-tight uppercase">Craft</span>
+          <span class="material-symbols-outlined text-3xl">restaurant</span>
+          <span class="text-xl font-bold tracking-tight uppercase">Food</span>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors"
+            href="#inicio"
+            >Inicio</a
+          >
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors"
+            href="#nosotros"
+            >Nosotros</a
+          >
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors"
+            href="#menu"
+            >Menú</a
+          >
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors"
+            href="#contacto"
+            >Contacto</a
+          >
+        </nav>
+        <button
+          class="bg-primary text-background-dark px-6 py-2.5 rounded-full font-bold text-sm hover:scale-105 transition-transform"
+        >
+          PIDE AHORA
+        </button>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section
+      class="relative min-h-screen flex items-center justify-center pt-20 px-6"
+      id="inicio"
+    >
+      <div class="absolute inset-0 z-0 overflow-hidden">
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/60 to-transparent z-10"
+        ></div>
+        <img
+          alt="Hamburguesa gourmet jugosa"
+          class="w-full h-full object-cover"
+          data-alt="Close up of a giant juicy gourmet burger"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBND43XuTopx8KnI5QDpae3Bc7uDwVCj9xXxsdBj6977d8irmgxDZtZJzylqFHbGCAlkNltVy2vAUAd6r2GKnQTGrjbCHrn2JRYV-cYj61Z62FoMKovclNd4dPijWh3SWgcV_iWMV_xIBYe1FjrmPrfgQN6GQ3RVavEqTaQhJLn2c8Wl4bYNJwQUbU26orrUECQhhT36DGwcPd2J9q6epg0r3U6ZaZOm4zn-q22TVu4IUryVUYXuHI958j_qUl1fFf66nyUd3qn7yI"
+        />
+      </div>
+      <div class="relative z-20 max-w-4xl text-center">
+        <h1
+          class="text-5xl md:text-8xl font-black mb-6 leading-tight tracking-tighter"
+        >
+          Craft Food <br />
+          <span class="text-primary">QUE NO SE OLVIDA</span>
+        </h1>
+        <p class="text-lg md:text-xl mb-10 text-slate-300 max-w-2xl mx-auto">
+          Descubre la verdadera esencia de la comida urbana con ingredientes
+          frescos, recetas artesanales y un toque único que te hará volver.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            class="bg-primary text-background-dark px-10 py-4 rounded-xl font-bold text-lg hover:shadow-[0_0_20px_rgba(255,217,0,0.4)] transition-all"
+            href="#menu"
+          >
+            VER MENÚ
+          </a>
+          <a
+            class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all"
+            href="#contacto"
+          >
+            UBICACIÓN
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- About Section -->
+    <section
+      class="py-24 px-6 bg-background-light dark:bg-background-dark"
+      id="nosotros"
+    >
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div class="relative">
+          <div
+            class="absolute -top-4 -left-4 w-24 h-24 bg-primary rounded-lg -z-10 opacity-20"
+          ></div>
+          <img
+            alt="Preparación de comida callejera"
+            class="rounded-2xl shadow-2xl"
+            data-alt="Chef preparing artisanal burgers in a professional kitchen"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhh8mqHGMCRfcs1EF6feituIEcu_-Yh1Vh76At5XWyNsWjaJ161l1hECrtVJziPnW9bYSyU2zVSqRO36ImNRkH94maPgyPotJ1ArzQVApprFKgyRXyV49pYL9k9OdGnSE2_L7KHG-TM3n3LUNgdtMFIK3T4nGQUXfIWpqkhybD_a3ndSQcAKCcyn5dCRMw59YL7mkdzYAfk7HftAwfrbBaMCZF9w7HHSyMYP4n4VG_6NRh7l-zvGbY3DS2YAVDGM24vL9WboHmdeM"
+          />
+          <div
+            class="absolute -bottom-6 -right-6 bg-primary p-8 rounded-2xl hidden lg:block"
+          >
+            <p class="text-background-dark font-black text-4xl">100%</p>
+            <p
+              class="text-background-dark font-bold text-sm uppercase tracking-wider"
+            >
+              Artesanal
+            </p>
+          </div>
+        </div>
+        <div>
+          <h2
+            class="text-4xl md:text-5xl font-bold mb-8 text-primary uppercase tracking-tight"
+          >
+            Nuestra Esencia
+          </h2>
+          <p class="text-lg text-slate-400 mb-6 leading-relaxed">
+            En <span class="text-white font-bold">Craft Food</span>,
+            transformamos los clásicos urbanos en experiencias gourmet. No somos
+            solo comida rápida; somos pasión por el fuego, el sabor y la
+            calidad.
+          </p>
+          <div class="grid grid-cols-2 gap-6 mt-10">
+            <div class="flex flex-col gap-2">
+              <span class="material-symbols-outlined text-primary text-4xl"
+                >skillet</span
+              >
+              <h4 class="font-bold text-lg">Ingredientes Frescos</h4>
+              <p class="text-sm text-slate-500">
+                Carnes seleccionadas y vegetales del día.
+              </p>
+            </div>
+            <div class="flex flex-col gap-2">
+              <span class="material-symbols-outlined text-primary text-4xl"
+                >local_fire_department</span
+              >
+              <h4 class="font-bold text-lg">Sabor Ahumado</h4>
+              <p class="text-sm text-slate-500">
+                Técnicas de cocción que resaltan el aroma.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Menu Highlight Section -->
+    <section class="py-24 px-6 bg-background-light dark:bg-[#1a180b]" id="menu">
+      <div class="max-w-7xl mx-auto text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-white mb-4 uppercase">
+          El Menú <span class="text-primary italic">Estrella</span>
+        </h2>
+        <div class="h-1.5 w-32 bg-primary mx-auto rounded-full"></div>
+      </div>
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
+        <!-- Hamburguesas -->
+        <div
+          class="bg-background-dark p-4 rounded-2xl border border-primary/5 hover:border-primary/30 transition-all group"
+        >
+          <div class="relative h-64 mb-6 overflow-hidden rounded-xl">
+            <img
+              alt="Hamburguesa de la casa"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              data-alt="Delicious cheeseburger with melted cheddar and bacon"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2o3vxMA-4k9VLZeUEn7m6hAhTF2zIdZmWKkbo9uvnePAQUeuOgwzCk7tPV26ZNBJ41g7Yz7U-P565O3GSanP15wp9CY6OXRR-iaRXpJRjFAgyYsE5HC5bDyv7ybZ1lw-TO4h4XOOo-YTkMVwMZU9DAiGvlmxI9tiUlRiNT9wEL_bP0inAwc8IN39TDvvdYoxEIO9BY9RKZBzc6ISgtl8kg-Giwrk3QnfZsxInaazXeOz26omICxm54jMAmDGJHleIq51k34ud0zY"
+            />
+            <div
+              class="absolute top-4 right-4 bg-primary text-background-dark font-black px-4 py-1 rounded-lg shadow-lg"
+            >
+              $12.50
+            </div>
+          </div>
+          <h3
+            class="text-2xl font-bold mb-2 uppercase brush-stroke inline-block"
+          >
+            Hamburguesas
+          </h3>
+          <p class="text-slate-400 text-sm mb-4">
+            Carne Angus de 200g, queso cheddar fundido, tocino crocante y
+            nuestra salsa secreta.
+          </p>
+          <button
+            class="w-full py-3 border border-primary/20 rounded-xl text-primary font-bold hover:bg-primary hover:text-background-dark transition-all"
+          >
+            Añadir al pedido
+          </button>
+        </div>
+        <!-- Loaded Fries -->
+        <div
+          class="bg-background-dark p-4 rounded-2xl border border-primary/5 hover:border-primary/30 transition-all group"
+        >
+          <div class="relative h-64 mb-6 overflow-hidden rounded-xl">
+            <img
+              alt="Papas cargadas"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              data-alt="Loaded french fries with cheese and bacon bits"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-lckFEDeFamDgsqofjaFr1EHEVhEmuQ3J8A0KTDW6UVN66F_-KBNcvSj49vdbeJSJoajA0C79KEgWQU703oOMGPa-AJKDx_O-gYDEewuiAgWSaR8k2dEw1MjYIzl7UoFHXB0yI2USyY0BOGAjAKgBwnooxIZNRjAKmKOuVzJtXrBdSWJn_IiqDeZBUEQjsD9hB8_v7slBQQsRk0a20GKL5qYq_Y5ah7atuJK7Etq9cx3lGkET_m6HrEn0JcWaFHcDsgP-cBJmRnI"
+            />
+            <div
+              class="absolute top-4 right-4 bg-primary text-background-dark font-black px-4 py-1 rounded-lg shadow-lg"
+            >
+              $8.00
+            </div>
+          </div>
+          <h3
+            class="text-2xl font-bold mb-2 uppercase brush-stroke inline-block"
+          >
+            Papas Cargadas
+          </h3>
+          <p class="text-slate-400 text-sm mb-4">
+            Papas rústicas bañadas en crema de queso, cebollín y trocitos de
+            chorizo artesanal.
+          </p>
+          <button
+            class="w-full py-3 border border-primary/20 rounded-xl text-primary font-bold hover:bg-primary hover:text-background-dark transition-all"
+          >
+            Añadir al pedido
+          </button>
+        </div>
+        <!-- Alitas -->
+        <div
+          class="bg-background-dark p-4 rounded-2xl border border-primary/5 hover:border-primary/30 transition-all group"
+        >
+          <div class="relative h-64 mb-6 overflow-hidden rounded-xl">
+            <img
+              alt="Alitas BBQ"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              data-alt="Crispy buffalo chicken wings with dipping sauce"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsj8D6XDWJGXuFE3lIXoI5SnRMw2TwlWqQWcBWiO8E7AqEgXSPYgP401aritG6g_B9YmzXIJz6BQ3Svvt2licQIhc_Vf1g26ea6GOMYnXwAP1Nl33MNMpVRBthMbt9BRtP2YVnwDQCtwxXk5x0OBrITdbtRxp_UzGbgo3I9X8LyHe30zQesJcQv9Uf6j044iTRi6iqubX6tkD9Mp3-6xXCdL8Z5-8JrHjXs2DDo8DyMPQSZXcRDaf1S_1ulcKxtFx3r91SF8WukAk"
+            />
+            <div
+              class="absolute top-4 right-4 bg-primary text-background-dark font-black px-4 py-1 rounded-lg shadow-lg"
+            >
+              $10.50
+            </div>
+          </div>
+          <h3
+            class="text-2xl font-bold mb-2 uppercase brush-stroke inline-block"
+          >
+            Alitas Crujientes
+          </h3>
+          <p class="text-slate-400 text-sm mb-4">
+            12 piezas bañadas en salsa BBQ artesanal o picante extremo,
+            acompañadas de apio.
+          </p>
+          <button
+            class="w-full py-3 border border-primary/20 rounded-xl text-primary font-bold hover:bg-primary hover:text-background-dark transition-all"
+          >
+            Añadir al pedido
+          </button>
+        </div>
+        <!-- Costillas -->
+        <div
+          class="bg-background-dark p-4 rounded-2xl border border-primary/5 hover:border-primary/30 transition-all group"
+        >
+          <div class="relative h-64 mb-6 overflow-hidden rounded-xl">
+            <img
+              alt="Costillas BBQ"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              data-alt="Glazed pork ribs served on a wooden platter"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV57azXsOVT_0l1KJIHYfe81Ki35Enxm5I_BKuhV8KzuZFeoj9tpA2gBFQlxVxiTMTTGgfT4ZoYis5tO6h3RtZ8VqsORZZU5TyPEOe6Hbsg0GF8ARQ6w7KRkIMMvcQabb7qWs1C8gGmBrj0zAt57Hiln0lnl1JtSqkaUfEynS2rNyv1AqVq7QubK5i8VO8HbOj5Mmpj1ktskGe29_8HZL2qoskRj7xLHSrsMLJhPXzuqfeTnnOYhN1PHKtfa0y-sHvg5VG-Eg_zdc"
+            />
+            <div
+              class="absolute top-4 right-4 bg-primary text-background-dark font-black px-4 py-1 rounded-lg shadow-lg"
+            >
+              $15.00
+            </div>
+          </div>
+          <h3
+            class="text-2xl font-bold mb-2 uppercase brush-stroke inline-block"
+          >
+            Costillas BBQ
+          </h3>
+          <p class="text-slate-400 text-sm mb-4">
+            Medio costillar de cerdo ahumado por 8 horas, se desprende del hueso
+            al tocarlo.
+          </p>
+          <button
+            class="w-full py-3 border border-primary/20 rounded-xl text-primary font-bold hover:bg-primary hover:text-background-dark transition-all"
+          >
+            Añadir al pedido
+          </button>
+        </div>
+        <!-- Chillidog -->
+        <div
+          class="bg-background-dark p-4 rounded-2xl border border-primary/5 hover:border-primary/30 transition-all group"
+        >
+          <div class="relative h-64 mb-6 overflow-hidden rounded-xl">
+            <img
+              alt="Chilli Dog"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              data-alt="Spicy chili hot dog with onions and mustard"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1bOzvvY-52r4liMWZHhmCe0e3_ggfZdwjDvB_4cZ0WoSRyOch6ohb1k431phpnZUPOFHvx6JwQYLAGLBA31AyPXDBvQA7UsxGaRvSk0Msn5CGlqHFvzZGuOL2qXgLH7jjbIq3tsfi3TYZU0Je0dRVn8oR8-h3-NS6ss1koQVB6okoUnuDKQgEJbbh3PkwmJ0mTQQZAVgGbXHaByl0RhtxLq4uLbh4SrlpZMp1m3VMZ_etVMb25n9GYRHGwZr9osAoIs6jmtlJoG8"
+            />
+            <div
+              class="absolute top-4 right-4 bg-primary text-background-dark font-black px-4 py-1 rounded-lg shadow-lg"
+            >
+              $7.50
+            </div>
+          </div>
+          <h3
+            class="text-2xl font-bold mb-2 uppercase brush-stroke inline-block"
+          >
+            Chilli Dog
+          </h3>
+          <p class="text-slate-400 text-sm mb-4">
+            Salchicha alemana, chilli de la casa con carne y frijoles, y lluvia
+            de queso.
+          </p>
+          <button
+            class="w-full py-3 border border-primary/20 rounded-xl text-primary font-bold hover:bg-primary hover:text-background-dark transition-all"
+          >
+            Añadir al pedido
+          </button>
+        </div>
+        <!-- Bebidas -->
+        <div
+          class="bg-background-dark p-4 rounded-2xl border border-primary/5 hover:border-primary/30 transition-all group"
+        >
+          <div class="relative h-64 mb-6 overflow-hidden rounded-xl">
+            <img
+              alt="Bebidas frías"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              data-alt="Assorted craft sodas and cold drinks in glass bottles"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMAGo5CWjLIglJBS26Cco03dsf85_BGFv14-juRXi-IlujbRb8qnOP9hKxNFQdq0HvbFsMGZL28hMy6VCJk_I91CR4pmqqBDxfle--5uTwHC0W0dSy2wO25EV6HGf0CFQrES8_riJJtdWbCNmrte_RP8rVtrdX6QcsC2NvnxrQDAXVSyPggdFregpxgpa-zn_L9uTGuHn_lkplM_DIZ6aiD8tjKTW-6UK5ZnB_5XObSUUWlLwPHeZeCKmA5ELn9c8RcA2NDwn3PGI"
+            />
+            <div
+              class="absolute top-4 right-4 bg-primary text-background-dark font-black px-4 py-1 rounded-lg shadow-lg"
+            >
+              $3.50
+            </div>
+          </div>
+          <h3
+            class="text-2xl font-bold mb-2 uppercase brush-stroke inline-block"
+          >
+            Bebidas
+          </h3>
+          <p class="text-slate-400 text-sm mb-4">
+            Limonadas naturales, sodas artesanales y cervezas nacionales bien
+            frías.
+          </p>
+          <button
+            class="w-full py-3 border border-primary/20 rounded-xl text-primary font-bold hover:bg-primary hover:text-background-dark transition-all"
+          >
+            Añadir al pedido
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Gallery Section -->
+    <section class="py-24 px-6 bg-background-dark dotted-bg">
+      <div class="max-w-7xl mx-auto text-center mb-16">
+        <h2
+          class="text-4xl md:text-5xl font-bold text-white uppercase tracking-tighter italic"
+        >
+          Nuestra Galería
+        </h2>
+      </div>
+      <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+        <img
+          alt="Foto de comida 1"
+          class="w-full h-64 object-cover rounded-xl grayscale hover:grayscale-0 transition-all cursor-pointer"
+          data-alt="Close up of a big burger on a wooden plate"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAtCkC8Ilw-qF3Nak5XGQPiRy8PxTREp2bPEOgHaX_LzZIRh2-MquAxlYdnfPsm-_vGBhk6jB_Q3mSFrMd3ZwsstTreltxd4COqS1J24oX4FVlffEZUUxPE8trNego4eJ0xdfkR7pkU97AvL8DS8idLL8wTIDuggLROJWyFuUpi9iCqCyqkMd2p-B-NZIO6SSGSyvDnP58DEI_BKKlO0imOqGYGB5ve7RwhH9aKteUXSWZKrd0OoSBmg7wPIKGfIaVkZqBjM4mW4g"
+        />
+        <img
+          alt="Foto de comida 2"
+          class="w-full h-64 object-cover rounded-xl grayscale hover:grayscale-0 transition-all cursor-pointer"
+          data-alt="Basket of crispy chicken nuggets"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNbFv2fVSMslRETJfO_OSlUCI7gJc5V0XJOlXSAE85Kp31v2sm8nX1InIVlU7PbhVQZAyUkyjVOd9xqtBNfEUiXbGUckFsvFmwVRNZHoVvQcCcR-mLczjvy6nzX9Tx0uBtIf86IHIWwc465FFo9CrtmHmMGq_hpksBLy1wrRZZUPQfE0w6gUqf35tTpuJoHN7Fo52Hdf_CtO1JvxQvZCFw9XtY9S6kp2tr4RVpPBmP29PRvqgAa0iLdapHMlYrAVLhV8awWQnZKdo"
+        />
+        <img
+          alt="Foto de comida 3"
+          class="w-full h-64 object-cover rounded-xl grayscale hover:grayscale-0 transition-all cursor-pointer"
+          data-alt="Cheeseburger with large portion of french fries"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8RqLcgTYAT8QweB55NkHyW86CGOidQJo_1YaRP5zNFkW9Mp86gOrDGfK3_C1Zb2XRXr5NEuT3OS2hm8JD748xComXoRZ86vFWl4aujIMY5LUlHbgTEPmArbHc5NNlSw5Kh4cceu_2dHPmvA3PeCwk9T6L2rExA2A2LG4za2GeQNXU8zT1bWhgFrc8W044Wo0ATO1icN4rnnfsc7Rla2yIVWGumxhhPbVm0XRR9BGeTwz7dkKQ3XkEv0X6jgHEv9SgcKfB3TPi1tI"
+        />
+        <img
+          alt="Foto de comida 4"
+          class="w-full h-64 object-cover rounded-xl grayscale hover:grayscale-0 transition-all cursor-pointer"
+          data-alt="Plate of steaming pasta with tomato sauce"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf6m2LDG9u3vQj-6pLirdb2RPkhfSdSq458XgKATKb2K4aw89hPgfM4_YefAMsq9lVhZyf9Lv789EN6xOqTjmrusdkFl_6Nzl4n7T2mAjNWFMz2X8QI0KzbwXP_TwKQvRmtCMNphApupeQVGErOs1__m8uqmeQ_6Hapseiz0Vd3sKcEIdkSw6_WMaFrhHmLekvvG8kU1zHlh_iL2QqtuabHwQ5zpM-7DCDkp838xNTHP55emwGA4s-xoRKiUxOxP5Qt2k3zVpQiVA"
+        />
+      </div>
+    </section>
+    <!-- Contact & Info Section -->
+    <section
+      class="py-24 px-6 bg-background-light dark:bg-background-dark"
+      id="contacto"
+    >
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
+        <div class="space-y-12">
+          <div>
+            <h2 class="text-5xl font-bold text-white mb-6 uppercase">
+              Visítanos
+            </h2>
+            <p class="text-slate-400 text-lg">
+              Estamos en el corazón de la ciudad, listos para servirte la mejor
+              comida callejera.
+            </p>
+          </div>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <span
+                class="material-symbols-outlined text-primary bg-primary/10 p-3 rounded-full"
+                >location_on</span
+              >
+              <div>
+                <h4 class="font-bold text-xl">Ubicación</h4>
+                <p class="text-slate-400">
+                  Av. Gastronomía 123, Barrio El Sabor, CDMX
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span
+                class="material-symbols-outlined text-primary bg-primary/10 p-3 rounded-full"
+                >schedule</span
+              >
+              <div>
+                <h4 class="font-bold text-xl">Horarios</h4>
+                <p class="text-slate-400">Mar - Jue: 12:00 PM - 10:00 PM</p>
+                <p class="text-slate-400">Vie - Dom: 12:00 PM - 12:00 AM</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4">
+            <p class="font-bold text-slate-100">¿Tienes hambre ahora?</p>
+            <a
+              class="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-2xl font-bold text-lg hover:brightness-110 transition-all w-fit"
+              href="#"
+            >
+              <svg class="w-6 h-6 fill-current" viewbox="0 0 24 24">
+                <path
+                  d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.522-2.961-2.638-.087-.117-.708-.941-.708-1.803 0-.862.454-1.287.615-1.46.161-.173.346-.217.461-.217.115 0 .23 0 .33.007.103.004.242-.038.378.293.141.344.482 1.173.524 1.259.041.085.068.184.011.301-.057.117-.085.19-.17.289-.085.1-.178.223-.253.3-.086.086-.176.181-.076.353.1.173.447.737.958 1.192.658.585 1.214.767 1.387.853.173.086.274.072.376-.043.101-.117.433-.504.55-.676.117-.172.233-.144.39-.087.157.057 1 .472 1.173.559.173.086.288.13.33.202.042.072.042.418-.102.823z"
+                ></path>
+              </svg>
+              PEDIR POR WHATSAPP
+            </a>
+          </div>
+        </div>
+        <div
+          class="rounded-3xl overflow-hidden min-h-[400px] border border-primary/10"
+        >
+          <img
+            alt="Mapa de ubicación"
+            class="w-full h-full object-cover"
+            data-alt="Modern stylized map showing the restaurant location in a city"
+            data-location="Mexico City"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuH_6SdGOQ5y8MkU-rchOSCYepPM7dPa5tRqzchKS92m07Umd2nO8uivLcW5rB1llp5v0Z6XQu1E-XH04C_DVwUAifjx3Mh0q46j3zinak5I4NbWpl9x17GLtSzuhAqtWRjnr6NbaoneWVL1zshBsTHBE6LI2yvRHrwVHyg8gKrP2H12Ivi7q_7WoMkSLmlbyvyrKZpx-hsCcGlqdsFP24EPsFJCyRfyssjJFkM0bYIdiR2ywafg729PXYbXaAjbbTbFxK4MmepLE"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-primary/10 bg-background-dark">
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8"
+      >
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-2xl"
+            >restaurant</span
+          >
+          <span class="text-lg font-bold tracking-tight uppercase"
+            >Sabor <span class="text-primary">Callejero</span></span
+          >
+        </div>
+        <p class="text-slate-500 text-sm">
+          © 2024 Craft Food. Todos los derechos reservados.
+        </p>
+        <div class="flex gap-6">
+          <a
+            class="text-slate-400 hover:text-primary transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined">social_leaderboard</span>
+          </a>
+          <a
+            class="text-slate-400 hover:text-primary transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined">photo_camera</span>
+          </a>
+          <a
+            class="text-slate-400 hover:text-primary transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined">alternate_email</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <!-- Floating WhatsApp -->
+    <a
+      class="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform md:hidden"
+      href="#"
+    >
+      <svg class="w-8 h-8 fill-current" viewbox="0 0 24 24">
+        <path
+          d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.522-2.961-2.638-.087-.117-.708-.941-.708-1.803 0-.862.454-1.287.615-1.46.161-.173.346-.217.461-.217.115 0 .23 0 .33.007.103.004.242-.038.378.293.141.344.482 1.173.524 1.259.041.085.068.184.011.301-.057.117-.085.19-.17.289-.085.1-.178.223-.253.3-.086.086-.176.181-.076.353.1.173.447.737.958 1.192.658.585 1.214.767 1.387.853.173.086.274.072.376-.043.101-.117.433-.504.55-.676.117-.172.233-.144.39-.087.157.057 1 .472 1.173.559.173.086.288.13.33.202.042.072.042.418-.102.823z"
+        ></path>
+      </svg>
+    </a>
+  </body>
+</html>
